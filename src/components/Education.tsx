@@ -1,0 +1,168 @@
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { GraduationCap, Award, BookOpen } from 'lucide-react';
+
+gsap.registerPlugin(ScrollTrigger);
+
+const education = [
+  {
+    degree: 'Master of Science in Computer Science',
+    school: 'Stanford University',
+    period: '2016 - 2018',
+    focus: 'Human-Computer Interaction & Graphics',
+    achievements: ['Dean\'s List', 'Research Publication', 'Teaching Assistant'],
+  },
+  {
+    degree: 'Bachelor of Science in Software Engineering',
+    school: 'MIT',
+    period: '2012 - 2016',
+    focus: 'Full-Stack Development & Systems Design',
+    achievements: ['Summa Cum Laude', 'Hackathon Winner', 'Computer Science Club President'],
+  },
+];
+
+const certifications = [
+  { name: 'AWS Solutions Architect', issuer: 'Amazon', year: '2023' },
+  { name: 'Google Cloud Professional', issuer: 'Google', year: '2022' },
+  { name: 'Meta Frontend Developer', issuer: 'Meta', year: '2021' },
+];
+
+export const Education = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from('.education-card', {
+        scrollTrigger: {
+          trigger: '.education-grid',
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
+        },
+        y: 50,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: 'power3.out',
+      });
+
+      gsap.from('.cert-card', {
+        scrollTrigger: {
+          trigger: '.cert-grid',
+          start: 'top 85%',
+          toggleActions: 'play none none reverse',
+        },
+        scale: 0.9,
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0.1,
+        ease: 'back.out(1.7)',
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section id="education" ref={sectionRef} className="py-32 relative overflow-hidden">
+      {/* Scan bar effect */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent scan-line" />
+      </div>
+
+      <div className="container mx-auto px-6">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <span className="font-display text-sm tracking-[0.3em] text-accent uppercase">Learning path</span>
+          <h2 className="font-display text-4xl md:text-5xl font-bold mt-4">
+            <span className="text-accent">EDUCATION</span>
+          </h2>
+        </div>
+
+        {/* Education Cards */}
+        <div className="education-grid grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
+          {education.map((edu, index) => (
+            <div
+              key={index}
+              className="education-card glass-card p-6 relative overflow-hidden group"
+            >
+              {/* Terminal frame effect */}
+              <div className="absolute top-0 left-0 right-0 h-8 bg-muted/30 flex items-center px-4 gap-2">
+                <div className="w-3 h-3 rounded-full bg-destructive/60" />
+                <div className="w-3 h-3 rounded-full bg-accent/60" />
+                <div className="w-3 h-3 rounded-full bg-secondary/60" />
+                <span className="font-mono text-xs text-muted-foreground ml-4">education_record.log</span>
+              </div>
+
+              <div className="pt-10 space-y-4">
+                {/* Icon and Degree */}
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-primary/20 rounded-lg">
+                    <GraduationCap className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-lg text-foreground">{edu.degree}</h3>
+                    <p className="text-secondary text-sm">{edu.school}</p>
+                  </div>
+                </div>
+
+                {/* Period and Focus */}
+                <div className="font-mono text-sm space-y-2 text-muted-foreground">
+                  <div>
+                    <span className="text-primary">period:</span> {edu.period}
+                  </div>
+                  <div>
+                    <span className="text-primary">focus:</span> {edu.focus}
+                  </div>
+                </div>
+
+                {/* Achievements */}
+                <div className="pt-4 border-t border-primary/20">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Award className="w-4 h-4 text-accent" />
+                    <span className="font-display text-sm text-accent">Achievements</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {edu.achievements.map((achievement, achIndex) => (
+                      <span
+                        key={achIndex}
+                        className="px-3 py-1 text-xs font-display tracking-wider bg-accent/10 text-accent rounded-full border border-accent/30"
+                      >
+                        {achievement}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Typing animation cursor */}
+              <div className="absolute bottom-4 right-4 font-mono text-xs text-primary animate-pulse">
+                <span className="border-r-2 border-primary pr-1">_</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Certifications */}
+        <div className="text-center mb-8">
+          <h3 className="font-display text-2xl text-foreground flex items-center justify-center gap-3">
+            <BookOpen className="w-6 h-6 text-secondary" />
+            Certifications
+          </h3>
+        </div>
+
+        <div className="cert-grid grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+          {certifications.map((cert, index) => (
+            <div
+              key={index}
+              className="cert-card glass-card p-4 text-center hover:neon-border-cyan transition-all duration-300"
+            >
+              <h4 className="font-display text-sm text-foreground mb-1">{cert.name}</h4>
+              <p className="text-muted-foreground text-xs">{cert.issuer} • {cert.year}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
