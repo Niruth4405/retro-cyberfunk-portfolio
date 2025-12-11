@@ -73,7 +73,7 @@ export const Footer = () => {
             ))}
             {displayedLines.length >= terminalLines.length && (
               <div className="terminal-text text-sm animate-pulse">
-                {">"} <span className="border-r-2 border-neon-mint pr-1">_</span>
+                {">"} <span className="border-r-2 border-neon-lime pr-1">_</span>
               </div>
             )}
           </div>
