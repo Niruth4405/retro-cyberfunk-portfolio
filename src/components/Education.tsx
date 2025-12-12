@@ -94,17 +94,6 @@ export const Education = () => {
                     </div>
                   </div>
                 </div>
-
-                {/* Period and Focus */}
-                <div className="font-mono text-sm space-y-2 text-muted-foreground">
-                  <div>
-                    <span className="text-primary">period:</span> {edu.period}
-                  </div>
-                  <div>
-                    <span className="text-primary">focus:</span> {edu.focus}
-                  </div>
-                </div>
-
               </div>
             ))}
           </div>
