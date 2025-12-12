@@ -1,91 +1,161 @@
-import { useState, useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ExternalLink, Github, X } from 'lucide-react';
+import { useState, useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ExternalLink, Github, X } from "lucide-react";
+
+import portfolio from "../assets/ProjectPics/Portfolio .png";
+import virtual from "../assets/ProjectPics/virtualAi.png";
+import summit from "../assets/ProjectPics/summit.png";
+import Linkedin from "../assets/ProjectPics/Linkedin.png";
+import book from "../assets/ProjectPics/bookAPI.png";
+import login from "../assets/ProjectPics/login.png";
+import weather from "../assets/ProjectPics/Weather.png";
+import spreadsheet from "../assets/ProjectPics/Spreadsheets.png";
+import notes from "../assets/ProjectPics/NotesApp.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   {
-    id: 1,
-    title: 'Quantum Dashboard',
-    category: 'Web App',
-    description: 'A real-time analytics dashboard with 3D data visualization and predictive insights.',
-    longDescription: 'Built using React, Three.js, and D3.js, this dashboard provides enterprise clients with real-time analytics, predictive modeling, and stunning 3D data visualizations. Features include customizable widgets, real-time collaboration, and AI-powered insights.',
-    technologies: ['React', 'Three.js', 'D3.js', 'Node.js', 'PostgreSQL'],
-    color: 'primary',
-    image: null,
+    title: "Portfolio Website",
+    category: "Web App",
+    description:
+      "Personal portfolio website built with Next.js and Tailwind CSS",
+    longDescription:
+      "Personal portfolio built with Next.js, TypeScript, Tailwind CSS and Framer Motion, featuring animated sections, responsive layout and project highlights.",
+    image: portfolio,
+    github: "https://github.com/Niruth4405/portfolioWeb",
+    live: "https://portfolio-web-2025.vercel.app/",
+    technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Framer Motion"],
+    color: "primary",
   },
   {
-    id: 2,
-    title: 'Neural Art Generator',
-    category: 'Creative Tech',
-    description: 'AI-powered generative art platform using machine learning and WebGL.',
-    longDescription: 'An experimental platform that combines machine learning with creative coding. Users can generate unique artworks using various AI models, customize parameters in real-time, and export their creations as NFTs or high-resolution prints.',
-    technologies: ['Python', 'TensorFlow', 'WebGL', 'GLSL', 'React'],
-    color: 'secondary',
-    image: null,
+    title: "Landing Page",
+    category: "Web App",
+    description: "Modern landing page with responsive design",
+    longDescription:
+      "A clean, modern marketing landing page with responsive layout, smooth scroll and CTA-focused sections.",
+    image: virtual,
+    github: "https://github.com/username/landing",
+    live: "https://lp-vfba.vercel.app/",
+    technologies: ["Next.js", "JavaScript", "Tailwind CSS"],
+    color: "secondary",
   },
   {
-    id: 3,
-    title: 'CryptoVault',
-    category: 'Fintech',
-    description: 'Secure cryptocurrency portfolio manager with advanced trading features.',
-    longDescription: 'A comprehensive cryptocurrency management platform featuring real-time portfolio tracking, automated trading strategies, and bank-grade security. Integrates with major exchanges and provides detailed analytics.',
-    technologies: ['Next.js', 'TypeScript', 'Web3.js', 'Redis', 'AWS'],
-    color: 'accent',
-    image: null,
+    title: "IEDC DSCE Website",
+    category: "Web App",
+    description:
+      "Website for Innovation and Entrepreneurship Development Cell to promote E-summit 2024",
+    longDescription:
+      "Event website for IEDC DSCE’s E‑Summit 2024 with schedules, speaker info and responsive sections for desktop and mobile.",
+    image: summit,
+    github: "https://github.com/Niruth4405/E-Summit",
+    live: "https://e-summit24.vercel.app/",
+    technologies: ["React", "Tailwind CSS", "JavaScript"],
+    color: "accent",
   },
   {
-    id: 4,
-    title: 'EcoTrack',
-    category: 'Mobile App',
-    description: 'Carbon footprint tracker with gamification and community challenges.',
-    longDescription: 'A mobile-first application that helps users track and reduce their carbon footprint through gamification, community challenges, and personalized recommendations. Features include barcode scanning, location-based suggestions, and social sharing.',
-    technologies: ['React Native', 'Firebase', 'Node.js', 'MongoDB'],
-    color: 'primary',
-    image: null,
+    title: "Linkedin Clone",
+    category: "UI Clone",
+    description: "A clone of Linkedin home page (Not responsive)",
+    longDescription:
+      "UI clone of LinkedIn’s home page focusing on layout, typography and component structure.",
+    image: Linkedin,
+    github: "https://github.com/Niruth4405/Linkedin-Clone",
+    live: "https://linkedin-clone-six-orcin.vercel.app/",
+    technologies: ["Next.js", "Tailwind CSS", "JavaScript"],
+    color: "primary",
   },
   {
-    id: 5,
-    title: 'SoundScape VR',
-    category: 'XR Experience',
-    description: 'Immersive VR music visualization experience with spatial audio.',
-    longDescription: 'An award-winning VR experience that transforms music into immersive visual landscapes. Features real-time audio analysis, procedural generation, and support for major VR platforms. Used by artists and venues worldwide.',
-    technologies: ['Unity', 'C#', 'FMOD', 'Oculus SDK', 'HLSL'],
-    color: 'secondary',
-    image: null,
+    title: "Internship Test",
+    category: "Web App",
+    description: "An internship test creating documentation for their project",
+    longDescription:
+      "A documentation‑focused project built as part of an internship test, showcasing clear layout and structured content.",
+    image: book,
+    github: "https://github.com/Niruth4405/internship-test",
+    live: "https://internship-test-sooty.vercel.app/",
+    technologies: ["Next.js", "Tailwind CSS", "JavaScript"],
+    color: "secondary",
   },
   {
-    id: 6,
-    title: 'DevFlow',
-    category: 'SaaS',
-    description: 'Developer productivity platform with AI-assisted code review.',
-    longDescription: 'A comprehensive developer productivity suite featuring AI-powered code review, automated documentation, team analytics, and integration with popular development tools. Helps teams ship better code faster.',
-    technologies: ['Next.js', 'OpenAI', 'GraphQL', 'Prisma', 'Vercel'],
-    color: 'accent',
-    image: null,
+    title: "Login and Signup page",
+    category: "UI Design",
+    description: "Login & Signup page design for college website",
+    longDescription:
+      "Auth UI with separate login and signup flows designed for a college website.",
+    image: login,
+    github: "https://github.com/Niruth4405/DSCE-project",
+    live: "https://dsce-project.vercel.app/",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    color: "accent",
+  },
+  {
+    title: "Weather App",
+    category: "Web App",
+    description: "Regular weather app using OpenWeather API",
+    longDescription:
+      "Weather dashboard that shows current conditions and basic info using the OpenWeather API.",
+    image: weather,
+    github: "https://github.com/Niruth4405/Weather-app",
+    live: "https://weather-app-three-rust-57.vercel.app/",
+    technologies: ["React.js", "CSS", "JavaScript", "OpenWeather API"],
+    color: "primary",
+  },
+  {
+    title: "Spreadsheets App",
+    category: "Web App",
+    description: "A simple spreadsheet application with basic functionalities",
+    longDescription:
+      "Lightweight spreadsheet‑style app with cells, rows and simple operations implemented in React.",
+    image: spreadsheet,
+    github: "https://github.com/Niruth4405/Spreadsheets",
+    live: "https://spreadsheets-dt5ibkuhv-niruth-ananths-projects.vercel.app/",
+    technologies: ["React.js", "Tailwind CSS", "TypeScript", "Framer Motion"],
+    color: "secondary",
+  },
+  {
+    title: "PromptHub (Work in Progress)",
+    category: "Web App",
+    description:
+      "An enterprise level application that allows users to share and discover AI prompts",
+    longDescription:
+      "PromptHub is a community platform where creators share, discover, and remix AI prompts. Users showcase portfolio-style profiles, publish prompts with outputs, follow others, build collections, and monetize their work. Featuring dark/light mode, analytics, admin dashboard, and rich social features, it empowers prompt engineers to collaborate and grow",
+    image: notes,
+    github: "https://github.com/Niruth4405/Prompt-hub",
+    live: "Yet to deploy",
+    technologies: [
+      "Next.js",
+      "Next-auth",
+      "Typescript",
+      "Prisma",
+      "MongoDB",
+      "radix-UI"
+    ],
+    color: "accent",
   },
 ];
 
+type Project = (typeof projects)[number];
+
 export const Projects = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
-  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [hoveredProject, setHoveredProject] = useState<string | null>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.project-card', {
+      gsap.from(".project-card", {
         scrollTrigger: {
-          trigger: '.projects-grid',
-          start: 'top 80%',
-          toggleActions: 'play none none reverse',
+          trigger: ".projects-grid",
+          start: "top 80%",
+          toggleActions: "play none none reverse",
         },
         y: 60,
         opacity: 0,
         duration: 0.8,
         stagger: 0.15,
-        ease: 'power3.out',
+        ease: "power3.out",
       });
     }, sectionRef);
 
@@ -93,14 +163,20 @@ export const Projects = () => {
   }, []);
 
   return (
-    <section id="projects" ref={sectionRef} className="py-32 relative overflow-hidden">
+    <section
+      id="projects"
+      ref={sectionRef}
+      className="py-32 relative overflow-hidden"
+    >
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyber-violet/50 to-transparent" />
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="font-display text-sm tracking-[0.3em] text-secondary uppercase">Selected work</span>
+          <span className="font-display text-sm tracking-[0.3em] text-secondary uppercase">
+            Selected work
+          </span>
           <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 neon-text-cyan">
             PROJECTS
           </h2>
@@ -110,36 +186,34 @@ export const Projects = () => {
         <div className="projects-grid grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {projects.map((project) => (
             <div
-              key={project.id}
+              key={project.title}
               className="project-card glass-card relative overflow-hidden group cursor-pointer"
               onClick={() => setSelectedProject(project)}
-              onMouseEnter={() => setHoveredProject(project.id)}
+              onMouseEnter={() => setHoveredProject(project.title)}
               onMouseLeave={() => setHoveredProject(null)}
             >
               {/* Hologram Preview */}
               <div className="aspect-video relative overflow-hidden">
-                <div className={`absolute inset-0 bg-gradient-to-br from-${project.color}/30 via-cyber-violet to-${project.color}/10`} />
-                
-                {/* Glitch effect on hover */}
-                {hoveredProject === project.id && (
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br from-${project.color}/30 via-cyber-violet to-${project.color}/10`}
+                />
+
+                {hoveredProject === project.title && (
                   <div className="absolute inset-0 animate-flicker">
                     <div className="absolute inset-0 bg-primary/10" />
                   </div>
                 )}
-                
-                {/* Project icon/preview */}
+
                 <div className="absolute inset-0 flex items-center justify-center">
                   <span className="font-display text-5xl font-bold text-foreground/20 group-hover:text-foreground/40 transition-colors">
                     {project.title.charAt(0)}
                   </span>
                 </div>
 
-                {/* Scan line */}
                 <div className="absolute inset-0 overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity">
                   <div className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-secondary/50 to-transparent scan-line" />
                 </div>
 
-                {/* Neon frame draw effect */}
                 <svg className="absolute inset-0 w-full h-full pointer-events-none">
                   <rect
                     x="0"
@@ -151,15 +225,19 @@ export const Projects = () => {
                     strokeWidth="2"
                     className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     strokeDasharray="100%"
-                    strokeDashoffset={hoveredProject === project.id ? '0%' : '100%'}
-                    style={{ transition: 'stroke-dashoffset 0.5s ease' }}
+                    strokeDashoffset={
+                      hoveredProject === project.title ? "0%" : "100%"
+                    }
+                    style={{ transition: "stroke-dashoffset 0.5s ease" }}
                   />
                 </svg>
               </div>
 
               {/* Content */}
               <div className="p-5">
-                <span className={`font-display text-xs tracking-wider text-${project.color} uppercase`}>
+                <span
+                  className={`font-display text-xs tracking-wider text-${project.color} uppercase`}
+                >
                   {project.category}
                 </span>
                 <h3 className="font-display text-xl text-foreground mt-2 mb-3 group-hover:text-primary transition-colors">
@@ -193,11 +271,11 @@ export const Projects = () => {
 
       {/* Project Modal */}
       {selectedProject && (
-        <div 
+        <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-cyber-navy/90 backdrop-blur-xl"
           onClick={() => setSelectedProject(null)}
         >
-          <div 
+          <div
             className="glass-card max-w-2xl w-full max-h-[90vh] overflow-auto animate-scale-in"
             onClick={(e) => e.stopPropagation()}
           >
@@ -214,7 +292,6 @@ export const Projects = () => {
                   {selectedProject.title.charAt(0)}
                 </span>
               </div>
-              {/* Neon border */}
               <div className="absolute inset-0 border-2 border-primary/30" />
             </div>
 
@@ -232,7 +309,9 @@ export const Projects = () => {
 
               {/* Technologies */}
               <div className="mb-6">
-                <h4 className="font-display text-sm tracking-wider text-foreground mb-3">Technologies</h4>
+                <h4 className="font-display text-sm tracking-wider text-foreground mb-3">
+                  Technologies
+                </h4>
                 <div className="flex flex-wrap gap-2">
                   {selectedProject.technologies.map((tech) => (
                     <span
@@ -247,14 +326,24 @@ export const Projects = () => {
 
               {/* Action Buttons */}
               <div className="flex gap-4">
-                <button className="flex items-center gap-2 px-6 py-3 bg-cyber-gradient font-display text-sm tracking-wider text-white rounded-lg hover:opacity-90 transition-opacity">
+                <a
+                  href={selectedProject.live}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 px-6 py-3 bg-cyber-gradient font-display text-sm tracking-wider text-white rounded-lg hover:opacity-90 transition-opacity"
+                >
                   <ExternalLink className="w-4 h-4" />
                   View Live
-                </button>
-                <button className="flex items-center gap-2 px-6 py-3 glass-card font-display text-sm tracking-wider text-foreground hover:border-primary/50 transition-colors">
+                </a>
+                <a
+                  href={selectedProject.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 px-6 py-3 glass-card font-display text-sm tracking-wider text-foreground hover:border-primary/50 transition-colors"
+                >
                   <Github className="w-4 h-4" />
                   Source Code
-                </button>
+                </a>
               </div>
             </div>
           </div>

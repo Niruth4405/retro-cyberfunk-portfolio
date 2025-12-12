@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Github, Linkedin, Twitter, Mail, Terminal } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const socialLinks = [
-  { icon: Github, href: '#', label: 'GitHub' },
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
-  { icon: Twitter, href: '#', label: 'Twitter' },
-  { icon: Mail, href: '#', label: 'Email' },
+  { icon: Github, href: 'https://github.com/Niruth4405', label: 'GitHub' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/niruth-ananth-19a9961b3/', label: 'LinkedIn' },
+  { icon: Mail, href: 'https://mail.google.com/mail/u/0/#inbox', label: 'Email' },
 ];
 
 const terminalLines = [
@@ -101,13 +101,13 @@ export const Footer = () => {
           <p className="text-muted-foreground mb-6 max-w-md mx-auto">
             Have a project in mind? I'm always open to discussing new opportunities and creative ideas.
           </p>
-          <a
-            href="mailto:hello@cyberdev.com"
+          <Link
+            to="mailto:niruthananth03@gmail.com"
             className="inline-flex items-center gap-2 px-8 py-4 bg-cyber-gradient font-display text-sm tracking-wider text-white rounded-xl hover:opacity-90 transition-opacity"
           >
             <Mail className="w-5 h-5" />
             GET IN TOUCH
-          </a>
+          </Link>
         </div>
 
         {/* Bottom Bar */}

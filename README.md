@@ -1,73 +1,89 @@
-# Welcome to your Lovable project
+# ⚡ Cyberfunk Portfolio — Retro-Futuristic Developer Website
 
-## Project info
+A fully responsive, animation-rich, cyberfunk-themed portfolio website built using **Next.js 16**, **GSAP**, **Three.js**, and **TailwindCSS**.  
+Designed with a fusion of **retro-futurism**, **cyberpunk neon energy**, and **modern 3D motion design**.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+This portfolio showcases experience, projects, skills, and personal branding with next-level UI polish and immersive interactions.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🚀 Features
 
-**Use Lovable**
+### 🔥 **Cyberfunk + Retro-Futuristic Design**
+- Neon glows, holographic accents, CRT textures  
+- Vaporwave-inspired gradient lighting  
+- Futuristic typography and HUD-style elements  
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+### ✨ **Smooth Modern Animations**
+Powered by **GSAP + ScrollTrigger**:
+- Section reveal animations  
+- Neon glow pulses  
+- Glitch transitions  
+- Parallax hovering elements  
+- Dynamic scrolling timelines  
 
-Changes made via Lovable will be committed automatically to this repo.
+### 🧊 **3D Interactions**
+Using **Three.js / Spline** for:
+- 3D holographic profile avatar  
+- Interactive floating skill chips  
+- Ambient 3D particles  
 
-**Use your preferred IDE**
+### 📱 **Fully Responsive**
+- Desktop: full cyberpunk experience  
+- Tablet: optimized parallax & layout  
+- Mobile: simplified 3D + lightweight animations  
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### 🧩 **Modular Component Architecture**
+Each section is broken into reusable React components:
+- `Navbar`
+- `Hero`
+- `About`
+- `Experience`
+- `Education`
+- `Skills`
+- `Projects`
+- `Footer`
+- Shared UI (modals, buttons, animations)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## 🛠️ Tech Stack
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### **Frontend Framework**
+- **Next.js 16 (App Router + RSC)**
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### **Styling**
+- **TailwindCSS**
+- Custom neon shadows & CRT filters  
+- CSS variables for global color themes  
 
-# Step 3: Install the necessary dependencies.
-npm i
+### **Animation Libraries**
+- **GSAP**  
+- **ScrollTrigger**  
+- **Lottie**  
+- **Framer Motion** (optional)
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+### **3D / Visual Effects**
+- **Three.js**  
+- **Spline** embed  
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🎨 Color Palette
+Inspired by cyberpunk neon + retro holographic UI.
 
-**Use GitHub Codespaces**
+| Color Name         | Hex Code   |
+|--------------------|------------|
+| Neon Magenta       | `#FF00CC`  |
+| Electric Cyan      | `#00EAFF`  |
+| Deep Violet        | `#1D0033`  |
+| Midnight Navy      | `#030014`  |
+| Aurora Mint        | `#B2FFE9`  |
+| Glitch Red         | `#FF375F`  |
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+(*Adjust palette if using updated theme like Neon Aurora.*)
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+## 📁 Project Structure
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
