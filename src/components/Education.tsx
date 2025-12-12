@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { GraduationCap } from 'lucide-react';
+import { GraduationCap, BookOpen } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -95,10 +95,16 @@ export const Education = () => {
                   </div>
                 </div>
 
-                {/* Typing animation cursor */}
-                <div className="absolute bottom-4 right-4 font-mono text-xs text-primary animate-pulse">
-                  <span className="border-r-2 border-primary pr-1">_</span>
+                {/* Period and Focus */}
+                <div className="font-mono text-sm space-y-2 text-muted-foreground">
+                  <div>
+                    <span className="text-primary">period:</span> {edu.period}
+                  </div>
+                  <div>
+                    <span className="text-primary">focus:</span> {edu.focus}
+                  </div>
                 </div>
+
               </div>
             ))}
           </div>
