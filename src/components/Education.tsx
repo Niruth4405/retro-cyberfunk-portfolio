@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { GraduationCap, Award, BookOpen } from 'lucide-react';
+import { GraduationCap, BookOpen } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,14 +11,12 @@ const education = [
     school: 'Stanford University',
     period: '2016 - 2018',
     focus: 'Human-Computer Interaction & Graphics',
-    achievements: ['Dean\'s List', 'Research Publication', 'Teaching Assistant'],
   },
   {
     degree: 'Bachelor of Science in Software Engineering',
     school: 'MIT',
     period: '2012 - 2016',
     focus: 'Full-Stack Development & Systems Design',
-    achievements: ['Summa Cum Laude', 'Hackathon Winner', 'Computer Science Club President'],
   },
 ];
 
@@ -116,23 +114,6 @@ export const Education = () => {
                   </div>
                 </div>
 
-                {/* Achievements */}
-                <div className="pt-4 border-t border-primary/20">
-                  <div className="flex items-center gap-2 mb-3">
-                    <Award className="w-4 h-4 text-accent" />
-                    <span className="font-display text-sm text-accent">Achievements</span>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {edu.achievements.map((achievement, achIndex) => (
-                      <span
-                        key={achIndex}
-                        className="px-3 py-1 text-xs font-display tracking-wider bg-accent/10 text-accent rounded-full border border-accent/30"
-                      >
-                        {achievement}
-                      </span>
-                    ))}
-                  </div>
-                </div>
               </div>
 
               {/* Typing animation cursor */}
