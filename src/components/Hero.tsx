@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { MapPin, ChevronDown } from 'lucide-react';
 import gsap from 'gsap';
+import profilePhoto from '@/assets/profile-photo.jpg';
 
 export const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -130,17 +131,19 @@ export const Hero = () => {
           
           {/* Hologram Frame */}
           <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden animate-float">
-            {/* Gradient Background */}
-            <div className="absolute inset-0 bg-gradient-radial from-primary/30 via-secondary/20 to-transparent" />
+            {/* Profile Photo */}
+            <img 
+              src={profilePhoto} 
+              alt="Niruth Ananth" 
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-radial from-primary/10 via-transparent to-secondary/20" />
             
             {/* Scan Line Effect */}
             <div className="absolute inset-0 overflow-hidden">
               <div className="absolute left-0 right-0 h-1 bg-gradient-to-r from-transparent via-secondary/50 to-transparent scan-line" />
-            </div>
-            
-            {/* Profile Placeholder */}
-            <div className="absolute inset-4 rounded-full bg-gradient-to-br from-primary/40 via-cyber-violet to-secondary/40 flex items-center justify-center">
-              <span className="font-display text-6xl md:text-8xl font-bold text-foreground/80">CD</span>
             </div>
             
             {/* Glitch overlay */}
