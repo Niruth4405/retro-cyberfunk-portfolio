@@ -67,14 +67,14 @@ const projects = [
     color: "primary",
   },
   {
-    title: "Internship Test",
+    title: "Finance Dashboard",
     category: "Web App",
-    description: "An internship test creating documentation for their project",
+    description: " finance dashboard that turns real-time financial data into clear, intelligent insights through a polished multi-page interface with analytics, transactions, accounts, and decision-ready reporting",
     longDescription:
       "A documentation‑focused project built as part of an internship test, showcasing clear layout and structured content.",
     image: book,
-    github: "https://github.com/Niruth4405/internship-test",
-    live: "https://internship-test-sooty.vercel.app/",
+    github: "https://github.com/Niruth4405/zorvyn",
+    live: "https://finance-dashboard-five-phi.vercel.app/",
     technologies: ["Next.js", "Tailwind CSS", "JavaScript"],
     color: "secondary",
   },
@@ -122,8 +122,8 @@ const projects = [
     longDescription:
       "PromptHub is a community platform where creators share, discover, and remix AI prompts. Users showcase portfolio-style profiles, publish prompts with outputs, follow others, build collections, and monetize their work. Featuring dark/light mode, analytics, admin dashboard, and rich social features, it empowers prompt engineers to collaborate and grow",
     image: notes,
-    github: "https://github.com/Niruth4405/Prompt-hub",
-    live: "Yet to deploy",
+    github: "https://github.com/Niruth4405/PromptHub",
+    live: "https://share.google/xZ7zCFxl67EGfCjdw",
     technologies: [
       "Next.js",
       "Next-auth",
