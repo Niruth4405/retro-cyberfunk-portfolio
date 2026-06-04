@@ -49,6 +49,6 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{secrets.DOCKER_USERNAME}}/portfolio:v1
-            ${{secrets.DOCKER_USERNAME}}/portfolio:${{github.sha}}
-            ${{secrets.DOCKER_USERNAME}}/portfolio:${{github.ref_name}}
+            ${{secrets.DOCKER_USERNAME}}/niruth03/portfolio:v1
+            ${{secrets.DOCKER_USERNAME}}/niruth03/portfolio:${{github.sha}}
+            ${{secrets.DOCKER_USERNAME}}/niruth03/portfolio:${{github.ref_name}}
