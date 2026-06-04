@@ -13,12 +13,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: "24"
+          node-version: "20"
 
       - name: Install dependencies
         run: npm ci
@@ -32,23 +32,20 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6
-
-      - name: Setup node
-        run: echo ""
+        uses: actions/checkout@v4
 
       - name: Login to Docker Hub
-        uses: docker/login-action@v4
+        uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
       - name: Build and Push Docker Image
-        uses: docker/build-push-action@v7
+        uses: docker/build-push-action@v6
         with:
           context: .
           push: true
           tags: |
-            ${{secrets.DOCKER_USERNAME}}/niruth03/portfolio:v1
-            ${{secrets.DOCKER_USERNAME}}/niruth03/portfolio:${{github.sha}}
-            ${{secrets.DOCKER_USERNAME}}/niruth03/portfolio:${{github.ref_name}}
+            ${{ secrets.DOCKERHUB_USERNAME }}/portfolio:v1
+            ${{ secrets.DOCKERHUB_USERNAME }}/portfolio:${{ github.sha }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/portfolio:${{ github.ref_name }}
