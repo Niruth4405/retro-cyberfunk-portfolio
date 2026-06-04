@@ -1,7 +1,6 @@
 name: Artifact Demo
 
-on:
-  push:
+on: push
 
 jobs:
   build:
