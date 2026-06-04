@@ -1,0 +1,21 @@
+name: Artifact Demo
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Create a file
+      - name: Create artifact file
+        run: |
+          echo "Hello from GitHub Actions!" > output.txt
+
+      # Step 2: Upload the file as an artifact
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-artifact
+          path: .
