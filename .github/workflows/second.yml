@@ -1,6 +1,5 @@
 name: Second CI
 
-
 on:
   push
 
@@ -11,3 +10,10 @@ jobs:
     steps: 
         - name: Say Hello
           run: echo "Hello from the second workflow!"
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps: 
+        - name: Say Hello
+          run: echo "test completed successfully!"
