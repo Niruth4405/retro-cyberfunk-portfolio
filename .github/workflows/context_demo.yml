@@ -1,6 +1,6 @@
 name: Context Objects Demo
 
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀   
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀    # run-name is the workflow name
 
 on: [push]
 
