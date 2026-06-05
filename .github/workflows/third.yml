@@ -5,6 +5,9 @@ on:
   push:
     paths:
       - "**.js"
+      - "**.jsx"
+      - "**.ts"
+      - "**.tsx"
       - "**.json"
       - "**.md"
 
