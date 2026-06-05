@@ -79,4 +79,8 @@ jobs:
         run: kubectl get nodes
 
       - name: Deploy to AWS (k8s)
-        run: kubectl apply -f k8s/
+        run: |
+          kubectl apply -f k8s/
+          kubectl set image deployment/portfolio-deployment \
+          portfolio=${{ secrets.DOCKERHUB_USERNAME }}/portfolio:${{ github.sha }}
+          kubectl rollout status deployment/portfolio-deployment
